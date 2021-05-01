@@ -9,6 +9,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}/tmp/test.db'.format(dir_path)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app)
 
@@ -38,4 +39,4 @@ if __name__ == "__main__":
         click = CountClicks()
         db.session.add(click)
         db.session.commit()
-    app.run()
+    app.run(host="0.0.0.0")
