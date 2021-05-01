@@ -4,31 +4,48 @@ First, install dependencies:
 
 ```bash
 npm install
+# or
+yarn install
 ```
 
-Second, run the development server:
+Second, to run the Web application:
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Third, to run the Mobile application:
 
-## Learn More
+You have to edit App entry point in `node_modules/expo/AppEntry.js`:
+```bash
+from:
+import App from '../../App';
+to:
+import App from '../../app/App';
+```
+I haven't searched for permanent solution to this issue. It has to be edited
+every time you preinstall node_modules.
 
-To learn more about Next.js, take a look at the following resources:
+Set `LOCAL_API` constant in `/app/constants/localApiUrl.js` with your machine Ip.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To get the Ip on Linux:
+```bash
+ifconfig | grep inet
+```
+On Windows:
+```bash
+ipconfig /renew Wi-Fi
+```
+The value is `IPv4 Address` under `Wireless LAN adapter Wi-Fi:` section.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Then run:
+```bash
+npm run app
+```
 
-## Deploy on Vercel
+To see the application on your mobile phone install Expo and refer the documentation:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://docs.expo.io/get-started/installation/#2-expo-go-app-for-ios-and

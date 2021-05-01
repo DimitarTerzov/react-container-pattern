@@ -12,4 +12,4 @@ Second, start development server:
 python app.py
 ```
 
-Application is waiting on: [http://localhost:5000](http://localhost:5000)
+Application is waiting on: [http://0.0.0.0:5000/](http://0.0.0.0:5000/)

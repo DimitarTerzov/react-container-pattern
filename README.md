@@ -9,4 +9,7 @@ React Native components should be implemented and a Mobile application.
 Application counts button clicks and save the count in db. Click count is displayed 
 and refreshed after every click.
 
+Important think is to sync both applications. When the button is clicked in 
+mobile we should update the count in web app too.
+
 To test it run Flask and React applications.
