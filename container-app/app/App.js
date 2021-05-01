@@ -8,7 +8,7 @@ import Header from './components/headerComponent';
 export default function App() {
   const [refresh, setRefresh] = useState(false);
   return (
-    <View>
+    <View style={styles.container}>
       <Header></Header>
       <CaptionContainer refresh={refresh} setRefresh={setRefresh} />
       <ContainerButton setRefrsh={setRefresh} />
@@ -23,5 +23,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
