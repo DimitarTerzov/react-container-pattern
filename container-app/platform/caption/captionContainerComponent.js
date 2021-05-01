@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CaptionView from './captionView';
 import CircularProgress from './circularProgress';
+import {LOCAL_API} from '../../app/constants/localApiUrl';
 
 const fetch = require('node-fetch');
 
@@ -10,7 +11,7 @@ export default function CaptionContainer({ refresh, setRefresh }) {
 
   useEffect(() => {
     async function fetchCount() {
-      const res = await fetch('http://192.168.1.104:5000');
+      const res = await fetch(LOCAL_API);
       const json = await res.json();
       setCount(json)
     }

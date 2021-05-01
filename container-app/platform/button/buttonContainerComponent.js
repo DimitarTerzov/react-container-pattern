@@ -1,12 +1,13 @@
 import React from 'react';
 import Button from './buttonView';
+import {LOCAL_API} from '../../app/constants/localApiUrl';
 
 const fetch = require('node-fetch');
 
 export default function ContainerButton({ setRefrsh }) {
 
   const handleClick = () => {
-    fetch('http://192.168.1.104:5000', {
+    fetch(LOCAL_API, {
       method: 'POST'
     })
     setRefrsh(true);
